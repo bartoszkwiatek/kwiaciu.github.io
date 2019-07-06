@@ -32,7 +32,7 @@ section {
   scroll-snap-stop: always; }
 
 .welcome {
-  background-image: linear-gradient(rgba(100, 10, 10, 0.5), rgba(200, 10, 10, 0.5)), url("../content/background1.jpg");
+  background-image: linear-gradient(rgba(100, 10, 10, 0.5), rgba(200, 10, 10, 0.5)), url("../content/background1.JPG");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -49,10 +49,8 @@ section {
     margin-top: -15%; }
 
 .about {
-  display: grid;
-  grid-template-columns: minmax(10%, 20%) 1fr;
   align-items: start;
-  background-image: linear-gradient(rgba(35, 50, 30, 0.5), rgba(70, 10, 80, 0.5)), url("../content/background2.jpg");
+  background-image: linear-gradient(rgba(35, 50, 30, 0.5), rgba(70, 10, 80, 0.5)), url("../content/background2.JPG");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; }
@@ -66,10 +64,11 @@ section {
     margin-top: 0px;
     margin-bottom: 1rem; }
   .about aside {
-    margin: 2rem 0 2rem 3rem; }
+    width: 20%;
+    float: left;
+    margin: 1.5rem 1.5rem 1.5rem 2rem; }
   .about article {
-    margin: 2rem;
-    margin-left: 1rem;
+    margin: 0rem 3rem 3rem 3rem;
     padding: 2rem;
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
@@ -80,7 +79,7 @@ section {
       font-size: 1.2rem; }
 
 .projects {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(rgba(10, 60, 1, 0.7), rgba(10, 10, 59, 0.7)), url("../content/background3.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(rgba(10, 60, 1, 0.7), rgba(10, 10, 59, 0.7)), url("../content/background3.JPG");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -163,13 +162,20 @@ section {
     margin: 0; }
 
 #content {
-  width: 50%;
-  margin-left: 25%;
+  width: 60%;
+  margin-left: 20%;
+  margin-bottom: 4rem;
   font-size: 2rem;
   color: #fff;
   top: 15%;
   padding: 15px;
   border: 1px solid rgba(0, 0, 0, 0.1); }
+  #content li {
+    list-style: none;
+    font-size: 1.5rem;
+    margin: 1rem; }
+  #content a:link {
+    text-decoration: none; }
 
 .skills {
   background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7)), url("../content/background4.jpg");
@@ -303,6 +309,14 @@ section {
   position: relative;
   bottom: 120px;
   transform: rotateX(-90DEG); }
+
+.contact-icon {
+  position: relative;
+  top: 7px;
+  fill: whitesmoke;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem; }
 
 .roll-left-anim {
   -webkit-animation: roll-left-anim 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;

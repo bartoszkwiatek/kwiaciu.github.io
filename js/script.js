@@ -1,7 +1,11 @@
 // load animations
 window.onload = function() {
-	contactFade();
-	contactOverlay();
+	contactFadeHandler();
+	contactOverlayHandler();
+	clickProjectHandler();
+	flipSkillHandler();
+	scrollAnimationHandler();
+	skillClickHandler();
 
 	$('.welcome').children().addClass('roll-left-anim').removeClass('hidden');
 	$('.welcome').addClass('fade-in').removeClass('hidden');
@@ -47,109 +51,108 @@ function addDelaysToSkills(arrayOfElements) {
 
 
 
-//	close overlay if click outside content
-$('#overlay').on('mouseup', function(event) {
-        var isClickInside = document.getElementById('content').contains(event.target);
 
-        if (!isClickInside) {
-			$("#contact").addClass('fade-in').removeClass('fade-out');
-			$('#overlay').addClass('fade-out').removeClass('fade-in');
-			setTimeout(function() {
-				$('#overlay').addClass('hidden')},200);
-	     }
-});
+// make projects bigger on click
+function clickProjectHandler() {
 
-
-let state = {clickedProject: null};
-// project li hover
-$('.projects-grid li').hover(function() {
-	const element = $(this);
-	// const elementHeight = $('.projects-grid li').css('height','initial');
-	// element.css('grid-row', 'span 2');
-	element.find('h5, footer').removeClass('hidden');
-	element.find('h4').css('font-size', '1.5rem');
-}, function() {
-	const element = $(this);
-	if (!element.hasClass('clicked')) {
-		element.find('h5, footer').addClass('hidden');
-		element.find('h4').css('font-size', '2rem');	
-	}
-
-});
-
-$('.projects-grid li').on('mousedown',function() {
-	const element = $(this);
-	$('.projects-grid').children('li').removeClass('clicked');
-	$('.projects-grid').children('li').find('p').addClass('hidden');
-	$('.projects-grid').children('li').find('.description').addClass('desc-grid');
-	$('.projects-grid').children('li').css('grid-row', 'span 1');
-	$('.projects-grid').children('li').find('h5, footer').addClass('hidden');
-	$('.projects-grid').children('li').find('h4').css('font-size', '2rem');	
-	element.addClass('clicked');
+	// project li handle hover
+	$('.projects-grid li').hover(function() {
+		const element = $(this);
 		// const elementHeight = $('.projects-grid li').css('height','initial');
-	// element.css('grid-row', 'span 2');
-	element.find('p').removeClass('hidden');
-	element.find('.description').addClass('desc-grid');
-	element.css('grid-row', 'span 2');
-	element.find('h5, footer').removeClass('hidden');
-	element.find('h4').css('font-size', '1.5rem');
+		// element.css('grid-row', 'span 2');
+		element.find('h5, footer').removeClass('hidden');
+		element.find('h4').css('font-size', '1.5rem');
+	}, function() {
+		const element = $(this);
+		if (!element.hasClass('clicked')) {
+			element.find('h5, footer').addClass('hidden');
+			element.find('h4').css('font-size', '2rem');	
+		}
+
+	});
+
+	// handle click
+	$('.projects-grid li').on('mousedown',function() {
+		const element = $(this);
+		$('.projects-grid').children('li').removeClass('clicked');
+		$('.projects-grid').children('li').find('p').addClass('hidden');
+		$('.projects-grid').children('li').find('.description').addClass('desc-grid');
+		$('.projects-grid').children('li').css('grid-row', 'span 1');
+		$('.projects-grid').children('li').find('h5, footer').addClass('hidden');
+		$('.projects-grid').children('li').find('h4').css('font-size', '2rem');	
+		element.addClass('clicked');
+		element.find('p').removeClass('hidden');
+		element.find('.description').addClass('desc-grid');
+		element.css('grid-row', 'span 2');
+		element.find('h5, footer').removeClass('hidden');
+		element.find('h4').css('font-size', '1.5rem');
 });
-// $('.skill').on('click', function (event) {
-// 	event.stopPropagation()
-// 	const elementId = $(this).attr('id');
-// 	console.log(elementId);
-// 	dragElement(document.getElementById(elementId));
-// })
-
-// dragElement(document.getElementById("skills"));
-// // 
-
-// skill rotation animation
-$('.flip').hover(function(e) {
-	e.stopPropagation();
-	const element = $(this).first();
-	// element.find('h4').addClass('flip-out-hor-top');
-	element.find('.front').first().css("transform","rotateX(90DEG)");
-	setTimeout(function() {	element.find('.back,.icon').first().css("transform","rotateX(0DEG)"); },100);
-	setTimeout(function() {	element.find('.front').first().css("transform","rotateX(90DEG)"); },200);
-
-	
-}, function(e) {
-	e.stopPropagation();
-	let element = $(this).first();
-	setTimeout(function() {	element.find('.back,.icon').first().css("transform","rotateX(-90DEG)"); },100);
-	setTimeout(function() {	element.find('.front').first().css("transform","rotateX(0DEG)"); },200);
-});
+}
 
 
+function skillClickHandler() {
+	$('.skill').on('click', function (event) {
+		const element = $(this);
+		element.css("transform","scale(0.1)").css("opacity","0");
+		// $('#skills ul').children('li').css("transform","scale(1)").css("opacity","100");
+		// $('#skills').children('li').css("transform","scale(1)").css("opacity","100");
+	});
+}
+	// event.stopPropagation()
+	// const elementId = $(this).attr('id');
+	// console.log(elementId);
 
-// 3. page animations
-$('main').on('scroll', function() {
-	let position = $('main').scrollTop();
 
-	// 2 page
-	if (position >= $('section').height()) {
-		$('.about').children().addClass('slide-in-anim').removeClass('hidden');
-	}	
+// change one div to another when hovered
+function flipSkillHandler() {
+	$('.flip').hover(function(e) {
+		e.stopPropagation();
+		const element = $(this).first();
+		// element.find('h4').addClass('flip-out-hor-top');
+		element.find('.front').first().css("transform","rotateX(90DEG)");
+		setTimeout(function() {	element.find('.back,.icon').first().css("transform","rotateX(0DEG)"); },100);
+		setTimeout(function() {	element.find('.front').first().css("transform","rotateX(90DEG)"); },200);
 
-	// 3 page
-	if (position >= $('section').height()*2){
-		$('.projects-grid').children('li').css("transform","translateY(0px)").css("opacity","100");
-		$('.projects h3').css("transform","translateY(0px)").css("opacity","100");
-	}	
+		
+	}, function(e) {
+		e.stopPropagation();
+		let element = $(this).first();
+		setTimeout(function() {	element.find('.back,.icon').first().css("transform","rotateX(-90DEG)"); },100);
+		setTimeout(function() {	element.find('.front').first().css("transform","rotateX(0DEG)"); },200);
+	});
+}
 
-	// 4 page
-	if (position >= $('section').height()*3) {
-		$('#skills ul').children('li').css("transform","scale(1)").css("opacity","100");
-		$('#skills').children('li').css("transform","scale(1)").css("opacity","100");
-		$('main').off('scroll');
-		contactFade();
-	}
 
-});
+
+function scrollAnimationHandler() {
+	$('main').on('scroll', function() {
+		let position = $('main').scrollTop();
+
+		// 2 page
+		if (position >= $('section').height()) {
+			$('.about').children().addClass('slide-in-anim').removeClass('hidden');
+		}	
+
+		// 3 page
+		if (position >= $('section').height()*2){
+			$('.projects-grid').children('li').css("transform","translateY(0px)").css("opacity","100");
+			$('.projects h3').css("transform","translateY(0px)").css("opacity","100");
+		}	
+
+		// 4 page
+		if (position >= $('section').height()*3) {
+			$('#skills ul').children('li').css("transform","scale(1)").css("opacity","100");
+			$('#skills').children('li').css("transform","scale(1)").css("opacity","100");
+			$('main').off('scroll');
+			contactFadeHandler();
+		}
+
+	});
+}
+
 
 // contact fading
-function contactFade() {
+function contactFadeHandler() {
 	$('main').on('scroll', function() {
 	$('#contact').addClass('fade-out').removeClass('fade-in');
 	setTimeout(function () {
@@ -160,11 +163,24 @@ function contactFade() {
 	});
 }
 
-// open overlay on clicking contact
-function contactOverlay() {
+//  overlay control
+function contactOverlayHandler() {
+	//open overlay on clicking contact
 	$('#contact').on('click', function() {
-	$("#contact").addClass('fade-out').removeClass('fade-in');
-	$('#overlay').addClass('fade-in').removeClass('fade-out hidden');
+		$("#contact").addClass('fade-out').removeClass('fade-in');
+		$('#overlay').addClass('fade-in').removeClass('fade-out hidden');
+	});
+
+	//	close overlay if click outside content
+	$('#overlay').on('mouseup', function(event) {
+        var isClickInside = document.getElementById('content').contains(event.target);
+
+        if (!isClickInside) {
+			$("#contact").addClass('fade-in').removeClass('fade-out');
+			$('#overlay').addClass('fade-out').removeClass('fade-in');
+			setTimeout(function() {
+				$('#overlay').addClass('hidden')},200);
+	     }
 	});
 }
 
