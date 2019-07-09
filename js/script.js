@@ -1,32 +1,36 @@
 // load animations
-window.onload = function() {
+$(window).on('load', function() {
+	setTimeout(function() {	
+	$('main').removeClass('hidden');
+	$('.spinner').addClass('hidden');
 	contactFadeHandler();
 	contactOverlayHandler();
 	clickProjectHandler();
 	flipSkillHandler();
 	scrollAnimationHandler();
-	skillClickHandler();
+	// skillClickHandler();
 
 	$('.welcome').children().addClass('roll-left-anim').removeClass('hidden');
 	$('.welcome').addClass('fade-in').removeClass('hidden');
 	$('#contact').addClass('fade-in').removeClass('fade-out hidden');
 
 
-
+	$('.projects-grid li').find('p').slideUp();
 
 
 	addDelaysToProjects($('.projects-grid'));
 	addDelaysToSkills($('#skills ul'));
-	addDelaysToSkillsCategories($('#skills'));
+	addDelaysToSkillsCategories($('#skills'));},500);
 
-}
+
+});
 
 // 3 functions that do almost the same thing. Started with one, but then find one that making it universal would be too much pain
 function addDelaysToProjects(arrayOfElements) {
 	for (var i = arrayOfElements.children('li').length; i > 0; i--) {
 		// console.log(arrayOfElements);
 		let oneLi = arrayOfElements.children('li:nth-child('+i+')');
-		let delay = 'transform 0.5s cubic-bezier(.25,.46,.45,.94) '+(0.1 * i)+'s,opacity 0.5s cubic-bezier(.25,.46,.45,.94) '+(0.1 * i)+'s';
+		let delay = 'transform 0.5s cubic-bezier(.25,.46,.45,.94) '+(0.1 * i)+'s,opacity 0.5s cubic-bezier(.25,.46,.45,.94) '+(0.1 * i)+'s, height 0.5s linear';
 		oneLi.css('transition', delay);
 	}
 }
@@ -75,15 +79,12 @@ function clickProjectHandler() {
 	$('.projects-grid li').on('mousedown',function() {
 		const element = $(this);
 		$('.projects-grid').children('li').removeClass('clicked');
-		$('.projects-grid').children('li').find('p').addClass('hidden');
-		$('.projects-grid').children('li').find('.description').addClass('desc-grid');
-		$('.projects-grid').children('li').css('grid-row', 'span 1');
-		$('.projects-grid').children('li').find('h5, footer').addClass('hidden');
+		$('.projects-grid').children('li').find('p').slideUp();
+		// $('.projects-grid').children('li').find('h5, footer').addClass('hidden');
 		$('.projects-grid').children('li').find('h4').css('font-size', '2rem');	
 		element.addClass('clicked');
-		element.find('p').removeClass('hidden');
-		element.find('.description').addClass('desc-grid');
-		element.css('grid-row', 'span 2');
+		element.find('p').slideDown().removeClass('hidden');;
+		// element.find('p').removeClass('hidden');
 		element.find('h5, footer').removeClass('hidden');
 		element.find('h4').css('font-size', '1.5rem');
 });
@@ -105,7 +106,8 @@ function skillClickHandler() {
 
 // change one div to another when hovered
 function flipSkillHandler() {
-	$('.flip').hover(function(e) {
+	if ($('#skills').css('position') !== 'static') {
+		$('.flip').hover(function(e) {
 		e.stopPropagation();
 		const element = $(this).first();
 		// element.find('h4').addClass('flip-out-hor-top');
@@ -120,6 +122,10 @@ function flipSkillHandler() {
 		setTimeout(function() {	element.find('.back,.icon').first().css("transform","rotateX(-90DEG)"); },100);
 		setTimeout(function() {	element.find('.front').first().css("transform","rotateX(0DEG)"); },200);
 	});
+} else {
+	$('.mobile').toggleClass('hidden');
+}
+
 }
 
 
@@ -130,7 +136,9 @@ function scrollAnimationHandler() {
 
 		// 2 page
 		if (position >= $('section').height()) {
-			$('.about').children().addClass('slide-in-anim').removeClass('hidden');
+			// $('.about').children('aside').removeClass('hidden');
+			$('.about').children('div').addClass('fade-in').removeClass('hidden');
+
 		}	
 
 		// 3 page

@@ -15,7 +15,8 @@
 
 </head>
 <body>
-	<main class="container">
+	<div class="spinner"></div>
+	<main class="container hidden">
 		<section class="welcome hidden">
 				<h1 class="hidden" title="- General Kenobi">Hello there!</h1>
 				<h2 class="hidden">My name is Bartosz Kwiatek</h2>
@@ -24,21 +25,22 @@
 
 		</section>
 		<section class="about">
-			<aside class="hidden">
+			<div class="hidden">
+			<aside class="">
 				<figure class="round">
-					<img src="content/photo.JPG" alt="photo of my face, nothing interesting here">
+					<img src="content/photo.jpg" alt="photo of my face, nothing interesting here">
 				</figure>
 
 			</aside>
-			<article class="hidden">
+			<article class="">
 				<header><h3>About me</h3></header>
 				<p>My name is Bartosz Kwiatek. I graduated Wroclaw University Of Technology and Science as a Mechanical Engineer but decided to pursue career as Front End Developer.</p>
-				<p>History of my relationship with creating websites dates back to middle school when I took second place on school HTML competition, next was probably editing fan wiki pages. And then after some time another encounter was during university, when I discovered Python and framework Django - that's when I decided that being able to do both backend and frontend would be nice, but frontend is definitely more fun for me.</p>
-				<p>After graduating university I was working as a mechanical engineer, but inside my heart I felt that it was not what I was supposed to do. One day I found out about Google Developer Challenge Scholarship, and applied for Front End Developer course. But one may ask, if I started doing something to change my path, why it took so much time? And that would be reasonable doubt to express.</p>
+				<p>First encounter with creating websites dates back to middle school when I took second place on school HTML competition. After long time another was during university, when I discovered Python and framework Django - that's when I learned that frontend is definitely more fun for me than backend. But at that time I still believed that I should pursue career as mechanical designer.</p>
+				<p>After graduating university I was working as a mechanical engineer, job I started part-time during studies became full-time. The longer I worked however, more I felt that it was not best thing to do for me. One day I found out about Google Developer Challenge Scholarship, and applied for Front End Developer course. But one may ask, if I started doing something to change my path, why it took so much time? And that would be reasonable doubt to express.</p>
 				<p>The answer to that is connected to my motivation in work. Despite the fact that things I did at work wasn't very meaningful to me, and I was not very excited by CAD. What I valued at work was great working atmosphere, nice people and good teammates, also I could make use of my problem solving skils. And that's what was enough to keep me from leaving, I wasn't perfectly happy but it was good enough.</p>
 				<p>However right now I took a step forward towards uncertain future. I am creating apps and websites and learing to sharpen my skills as Front End Developer and at the same time I am looking for career opportunities to gain professional experience.</p>
 			</article>
-
+			</div>
 		</section>
 		<section class="projects">
 			<header><h3>Projects</h3></header>
@@ -48,13 +50,13 @@
 					<figure>
 						<a href="http://www.videofotex.pl"><img src="content/project-videofotex.JPG" alt="thumbnail of videofotex site"></a>
 					</figure>
-					<div class="description desc-grid">
+					<div class="description">
 						<header>
 							<h4>Photography portfolio website</h4>
 							<h5 class="technologies hidden">Bootstrap 4, JQuery</h5>
 							<footer class="hidden"><a href="http://www.videofotex.pl">www.videofotex.pl</a></footer>
 						</header>
-						<p class="hidden">Project description</p>
+						<p class="">Website created for small photography and video studio. Goal was to put emphasis on photography and create website that looks good on mobile devices.</p>
 					</div>
 				</article>
 				</li>
@@ -70,7 +72,8 @@
 							<h5 class="technologies hidden">HTML, CSS, JQuery</h5>
 							<footer class="hidden"><a href="https://kwiaciu.github.io/cv/">kwiaciu.github.io/cv/</a></footer>
 						</header>	
-						<p class="hidden">Project description</p>
+						<p class="">That project is basically my CV reimagined as a website. Style was inpired by material design.</p>
+						<p class="source"><a href="https://github.com/kwiaciu/cv">github.com/kwiaciu/cv</a></p>
 					</div>
 				</article>
 				</li>
@@ -86,12 +89,13 @@
 							<h5 class="technologies hidden">HTML, CSS, JQuery</h5>
 							<footer class="hidden"><footer><a href="https://kwiaciu.github.io/PixelArtCreator/">kwiaciu.github.io/PixelArtCreator/</a></footer>
 						</header>
-						<p class="hidden">Project description</p>
+						<p class="">App uses JQuery to modify table according to input from user.</p>
+						<p class="source"><a href="https://github.com/kwiaciu/PixelArtCreator">github.com/kwiaciu/PixelArtCreator</a></p>
 					</div>
 				</article>
 				</li>
 
-				<li>
+				<li id="third">
 				<article class="project">
 					<figure>
 						<a href="https://kwiaciu.github.io/Quiz/"><img src="content/project-quiz.JPG" alt="thumbnail of quiz app"></a>
@@ -102,7 +106,8 @@
 							<h5 class="technologies hidden">HTML, CSS, JQuery</h5>
 							<footer class="hidden"><a href="https://kwiaciu.github.io/Quiz/">kwiaciu.github.io/Quiz/</a></footer>
 						</header>
-						<p class="hidden">Project description</p>
+						<p class="">Quiz app created using JQuery to rewrite content of HTML elements.</p>
+						<p class="source"><a href="https://github.com/kwiaciu/Quiz">github.com/kwiaciu/Quiz</a></p>
 					</div>
 				</article>
 				</li>
@@ -116,9 +121,10 @@
 						<header>
 							<h4>Random password generator</h4>
 							<h5 class="technologies hidden">React</h5>
-							<footer class="hidden"><a href="https://passwordgenerator--kwiaciu.repl.co/">https://github.com/kwiaciu/PasswordGenerator</a></footer>
+							<footer class="hidden"><a href="https://passwordgenerator--kwiaciu.repl.co/">Preview</a></footer>
 						</header>
-						<p class="hidden">Project description</p>
+						<p class="">Simple app that I created for personal use. App randomises four types of password of set length.</p>
+						<p class="source"><a href="https://github.com/kwiaciu/PasswordGenerator">github.com/kwiaciu/PasswordGenerator</a></p>
 					</div>
 				</article>
 				</li>
@@ -132,9 +138,10 @@
 						<header>
 							<h4>Hot and cold game</h4>
 							<h5 class="technologies hidden">React, Material-UI</h5>
-							<footer class="hidden"><a href="https://hot-and-cold-game--kwiaciu.repl.co/">https://github.com/kwiaciu/hot-and-cold-game</a></footer>
+							<footer class="hidden"><a href="https://hot-and-cold-game--kwiaciu.repl.co/">Preview</a></footer>
 						</header>
-						<p class="hidden">Project description</p>
+						<p class="">Game where user tries to guess number and gets feedback according to how close he is to correct answer.</p>
+						<p class="source"><a href="https://github.com/kwiaciu/hot-and-cold-game">github.com/kwiaciu/hot-and-cold-game</a></p>
 					</div>
 				</article>
 				</li>
@@ -152,7 +159,8 @@
 							<h5 class="technologies hidden">Python, Django</h5>
 							<footer class="hidden"><a href="http://kwiaciu.pythonanywhere.com/blog/">http://kwiaciu.pythonanywhere.com/blog/</a></footer>
 						</header>
-						<p class="hidden">Project description</p>
+						<p class="">My first and only project in Django. I've put it here as curiosity. It's few random wiki articles made into blog format.</p>
+						<p class="source"><a href="https://github.com/kwiaciu/Django_blog">github.com/kwiaciu/Django_blog</a></p>
 					</div>
 				</article>
 				</li>
@@ -161,10 +169,11 @@
 
 		<section class="skills">
 			<ul>
-				<div class="skill-container" id="skills">
-					<h3>Skills</h3>
-					<li class="skill category" id="soft-skills">
-						<h4>soft skills</h4>
+				<h3 class="mobile hidden">Skills</h3>
+				<div class="skill-container change" id="skills">
+					<h3 class="mobile">Skills</h3>
+					<li class="skill flip category" id="soft-skills">
+					<div class="front"><img class="skill-icon" src="content/soft.png" alt="soft-skills icon"></div><div class="icon"><h4>soft skills</h4></div>
 						<ul>
 							<li class="skill" id="tp" style="top: 97px; left: -116px;">team player</li>
 							<li class="skill" id="comm" style="top: -31px; left: -147px;">communication</li>
@@ -172,8 +181,8 @@
 							<li class="skill" id="plan" style="top: -133px; left: 67px;">planning</li>
 						</ul>
 					</li>
-					<li class="skill category" id="frontend">
-						<h4>front end</h4>
+					<li class="skill flip category" id="frontend">
+					<div class="front"><img class="skill-icon" src="content/front.png" alt="front-end icon"></div><div class="icon"><h4>front end</h4></div>
 						<ul>
 							<li id="html" class="skill" style="top: -128px; left: 34px;">HTML5</li>
 							<li id="css" class="skill" style="top: -45px; left: 136px;">CSS3</li>
@@ -184,16 +193,16 @@
 							<li id="sass" class="skill" style="top: -170px; left: 168px;">Sass</li>
 						</ul>
 					</li>
-					<li class="skill flip category" id="language" >
-						<div class="front"><h4>language</h4></div><div class="icon">native</div>
+					<li class="skill flip category" id="language">
+						<div class="front"><img class="skill-icon" src="content/languages.png" alt="language icon"></div><div class="icon"><h4>language</h4></div>
 						<ul class="">
 							<li class="skill flip" id="polish" style="top: 23px; left: 206px;"><div class="front">polish</div><div class="back">native</div></li>
 							<li class="skill flip" id="english" style="top: 132px; left: 142px;"><div class="front">english</div><div class="back">advanced</div></li>
 							<li class="skill flip" id="german" style="top: 200px; left: 25px;"><div class="front">german</div><div class="back">basic</div></li>
 						</ul>
 					</li>				
-					<li class="skill category" id="others">
-						<h4>others</h4>
+					<li class="skill flip category" id="others">
+					<div class="front"><img class="skill-icon" src="content/others.png" alt="others icon"></div><div class="icon"><h4>others</h4></div>
 						<ul>
 							<li class="skill" id="python" style="top: 163px; left: 0px;">Python</li>
 							<li class="skill" id="django" style="top: 110px; left: 115px;">Django</li>
