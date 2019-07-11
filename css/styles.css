@@ -371,8 +371,9 @@ section {
     margin: 0rem 2.5% 3rem 2.5%;
     display: inherit; }
     .about article p {
+      font-size: 1.1rem;
       margin-bottom: 1rem; }
-  #third {
+  .snap-here {
     scroll-snap-align: start; }
   .projects {
     height: 150vh; }
@@ -380,35 +381,35 @@ section {
     width: 75%; } }
 
 @media (max-width: 900px) {
+  html {
+    font-size: 80%; }
+  #contact {
+    bottom: 2rem; }
+  #content {
+    width: 60%; }
+  .about article p {
+    font-size: 1.2rem; }
   .projects-grid li {
     width: 100%; }
-  .skills h3 {
-    margin: auto;
-    padding-top: 1.5rem; }
-  .skills ul {
-    text-align: center; }
-  .front, .icon {
+  .skills {
+    height: 100vh; }
+    .skills h3 {
+      margin: auto;
+      padding-top: 1.5rem; }
+    .skills ul {
+      text-align: center; }
+  .front,
+  .icon {
     display: inline-block; }
-  .icon, .skill-icon, .back {
+  .icon,
+  .skill-icon,
+  .back {
     position: static;
     transform: rotateX(0DEG); }
   .back {
     display: inline; }
     .back::before {
       content: ' - '; }
-  .skill-container {
-    height: 100vh !important;
-    background: none;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-direction: column; }
-    .skill-container:hover, .skill-container:active {
-      background: none; }
-  #comm,
-  #tm,
-  #ps,
-  #il,
   .skill-container,
   .skill,
   #skills,
@@ -417,16 +418,11 @@ section {
   #language,
   #others {
     position: static !important;
-    padding: 1rem !important;
-    font-size: 1rem !important;
+    padding: 1rem;
     width: auto;
     height: auto;
-    line-height: 1.5rem !important;
+    line-height: 1.5rem;
     border-radius: 0 !important; }
-    #comm .category,
-    #tm .category,
-    #ps .category,
-    #il .category,
     .skill-container .category,
     .skill .category,
     #skills .category,
@@ -434,10 +430,103 @@ section {
     #frontend .category,
     #language .category,
     #others .category {
-      margin: 1rem;
-      width: 45%; }
+      margin: 0.5rem;
+      width: 40%;
+      padding-top: 0px; }
+      .skill-container .category img,
+      .skill .category img,
+      #skills .category img,
+      #soft-skills .category img,
+      #frontend .category img,
+      #language .category img,
+      #others .category img {
+        padding: 0.5rem 0.5rem 0 0;
+        height: 3rem; }
+      .skill-container .category .icon,
+      .skill .category .icon,
+      #skills .category .icon,
+      #soft-skills .category .icon,
+      #frontend .category .icon,
+      #language .category .icon,
+      #others .category .icon {
+        position: relative;
+        bottom: 0.7rem; }
+        .skill-container .category .icon h4,
+        .skill .category .icon h4,
+        #skills .category .icon h4,
+        #soft-skills .category .icon h4,
+        #frontend .category .icon h4,
+        #language .category .icon h4,
+        #others .category .icon h4 {
+          font-size: 1.5rem; }
+  #comm,
+  #tm,
+  #ps,
+  #il {
+    font-size: 1rem !important;
+    padding: 1rem !important;
+    line-height: 1.5rem !important; }
+  .skill-container {
+    height: 100vh !important;
+    background: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 0px; }
+    .skill-container:hover, .skill-container:active {
+      background: none; }
+  #soft-skills {
+    order: 1; }
+  #frontend {
+    order: 2; }
+  #language {
+    order: 3; }
   #others {
-    order: 1; } }
+    order: 4; } }
+
+@media (max-width: 600px) {
+  #skills .category {
+    width: 45%; }
+  .about article p {
+    font-size: 1.1rem; }
+  #content {
+    width: 80%;
+    margin-left: 10%; } }
+
+@media (max-width: 415px) {
+  html {
+    font-size: 70%; }
+  .welcome h1,
+  .welcome h2,
+  .welcome h3,
+  .welcome h4 {
+    margin: 0.25rem 5% 0.25rem 5%; }
+  .welcome h1 {
+    margin-top: -15%; }
+  #content {
+    width: 50%;
+    margin-left: 5%; }
+    #content .contact-icon {
+      margin-bottom: 1rem; }
+  .about article {
+    width: 100%;
+    margin: 0rem 0 3rem 0%;
+    max-height: 100vh; }
+  .projects {
+    height: 130vh; }
+  .projects-grid {
+    padding: 1rem; }
+    .projects-grid figure {
+      height: 12vh; }
+    .projects-grid article {
+      grid-template-columns: 12vh 1fr; }
+  #skills .category {
+    width: 90%; }
+  .skills {
+    height: 150vh; }
+  .skill-container {
+    height: 150vh !important; } }
 
 .spinner {
   position: relative;
