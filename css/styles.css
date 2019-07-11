@@ -321,7 +321,7 @@ section {
 
 .icon {
   transition: transform .1s;
-  position: static;
+  position: relative;
   bottom: 120px;
   transform: rotateX(-90DEG); }
 
