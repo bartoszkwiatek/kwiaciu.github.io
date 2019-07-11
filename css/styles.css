@@ -61,6 +61,8 @@ section {
   background-position: center;
   background-size: cover;
   margin: auto; }
+  .about div {
+    opacity: 0; }
   .about figure {
     margin: 0; }
   .about img {
@@ -102,6 +104,7 @@ section {
     -webkit-transform: translateY(1000px);
     opacity: 0; }
   .projects h4 {
+    font-size: 1.8rem;
     margin: 0;
     padding: 0rem; }
   .projects footer {
@@ -361,6 +364,21 @@ section {
   #content {
     width: 50%;
     margin-left: 15%; }
+  .snap-here {
+    scroll-snap-align: start; }
+  main {
+    scroll-snap-type: y proximity; }
+  section {
+    scroll-snap-stop: normal; }
+  .projects {
+    height: auto; }
+  .projects-grid li {
+    width: 75%;
+    scroll-snap-align: start; } }
+
+@media (max-width: 900px) and (orientation: portrait) {
+  html {
+    font-size: 80%; }
   .about img {
     float: left; }
   .about aside {
@@ -368,21 +386,12 @@ section {
     margin: 1.5rem 7% 1.5rem 1.5rem; }
   .about article {
     width: 95%;
-    margin: 0rem 2.5% 3rem 2.5%;
+    margin: 0rem 2.5% 0rem 2.5%;
     display: inherit; }
     .about article p {
-      font-size: 1.1rem;
+      scroll-snap-align: start;
+      font-size: 1.2rem;
       margin-bottom: 1rem; }
-  .snap-here {
-    scroll-snap-align: start; }
-  .projects {
-    height: 150vh; }
-  .projects-grid li {
-    width: 75%; } }
-
-@media (max-width: 900px) {
-  html {
-    font-size: 80%; }
   #contact {
     bottom: 2rem; }
   #content {
@@ -397,6 +406,7 @@ section {
       margin: auto;
       padding-top: 1.5rem; }
     .skills ul {
+      scroll-snap-align: start;
       text-align: center; }
   .front,
   .icon {
@@ -467,7 +477,7 @@ section {
     padding: 1rem !important;
     line-height: 1.5rem !important; }
   .skill-container {
-    height: 100vh !important;
+    height: 80vh !important;
     background: none;
     display: flex;
     flex-wrap: wrap;
@@ -485,24 +495,28 @@ section {
   #others {
     order: 4; } }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) and (orientation: portrait) {
   #skills .category {
     width: 45%; }
-  .about article p {
-    font-size: 1.1rem; }
+  .about {
+    height: auto; }
   #content {
     width: 80%;
-    margin-left: 10%; } }
+    margin-left: 10%; }
+  .skills {
+    height: auto !important; }
+  .skill-container {
+    height: auto !important; } }
 
-@media (max-width: 415px) {
-  html {
-    font-size: 70%; }
+@media (max-width: 415px) and (orientation: portrait) {
   .welcome h1,
   .welcome h2,
   .welcome h3,
   .welcome h4 {
-    margin: 0.25rem 5% 0.25rem 5%; }
+    margin: 0.25rem 5% 0.25rem 5%;
+    font-size: 1.5rem; }
   .welcome h1 {
+    font-size: 2rem;
     margin-top: -15%; }
   #content {
     width: 50%;
@@ -511,10 +525,7 @@ section {
       margin-bottom: 1rem; }
   .about article {
     width: 100%;
-    margin: 0rem 0 3rem 0%;
-    max-height: 100vh; }
-  .projects {
-    height: 130vh; }
+    margin: 0; }
   .projects-grid {
     padding: 1rem; }
     .projects-grid figure {
@@ -522,11 +533,7 @@ section {
     .projects-grid article {
       grid-template-columns: 12vh 1fr; }
   #skills .category {
-    width: 90%; }
-  .skills {
-    height: 150vh; }
-  .skill-container {
-    height: 150vh !important; } }
+    width: 90%; } }
 
 .spinner {
   position: relative;

@@ -70,7 +70,7 @@ function clickProjectHandler() {
 		const element = $(this);
 		if (!element.hasClass('clicked')) {
 			element.find('h5, footer').addClass('hidden');
-			element.find('h4').css('font-size', '2rem');	
+			element.find('h4').css('font-size', '1.8rem');	
 		}
 
 	});
@@ -135,7 +135,7 @@ function scrollAnimationHandler() {
 		let position = $('main').scrollTop();
 
 		// 2 page
-		if (position >= $('section').height()) {
+		if (position >= $('.welcome').height()) {
 			// $('.about').children('aside').removeClass('hidden');
 			$('.about').children('div').addClass('fade-in').removeClass('hidden');
 
