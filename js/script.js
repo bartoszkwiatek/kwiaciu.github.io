@@ -142,13 +142,13 @@ function scrollAnimationHandler() {
 		}	
 
 		// 3 page
-		if (position >= $('section').height()*2){
+		if (position >= $('.welcome').height()+$('.about').height()){
 			$('.projects-grid').children('li').css("transform","translateY(0px)").css("opacity","100");
 			$('.projects h3').css("transform","translateY(0px)").css("opacity","100");
 		}	
 
 		// 4 page
-		if (position >= $('section').height()*3) {
+		if (position >= $('.welcome').height()+$('.about').height()+$('.projects').height()) {
 			$('#skills ul').children('li').css("transform","scale(1)").css("opacity","100");
 			$('#skills').children('li').css("transform","scale(1)").css("opacity","100");
 			$('main').off('scroll');

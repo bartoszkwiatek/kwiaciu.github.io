@@ -360,7 +360,7 @@ section {
   .projects-grid li {
     width: 45%; } }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   #content {
     width: 50%;
     margin-left: 15%; }
@@ -376,7 +376,7 @@ section {
     width: 75%;
     scroll-snap-align: start; } }
 
-@media (max-width: 900px) and (orientation: portrait) {
+@media (max-width: 992px) {
   html {
     font-size: 80%; }
   .about img {
@@ -495,7 +495,7 @@ section {
   #others {
     order: 4; } }
 
-@media (max-width: 600px) and (orientation: portrait) {
+@media (max-width: 768px) {
   #skills .category {
     width: 45%; }
   .about {
@@ -508,7 +508,7 @@ section {
   .skill-container {
     height: auto !important; } }
 
-@media (max-width: 415px) and (orientation: portrait) {
+@media (max-width: 600px) {
   .welcome h1,
   .welcome h2,
   .welcome h3,
@@ -534,6 +534,16 @@ section {
       grid-template-columns: 12vh 1fr; }
   #skills .category {
     width: 90%; } }
+
+@media (max-width: 1250px) and (orientation: landscape) {
+  .about {
+    height: auto; }
+  .projects {
+    height: auto; }
+  .skills {
+    height: auto !important; }
+  .skill-container {
+    height: auto !important; } }
 
 .spinner {
   position: relative;
