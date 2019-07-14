@@ -214,8 +214,8 @@ section {
   line-height: 120px; }
 
 #soft-skills {
-  bottom: 16vh;
-  right: 16vh;
+  bottom: 130px;
+  right: 130px;
   background-color: #1b5e20; }
   #soft-skills:hover {
     background-color: #003300; }
@@ -228,8 +228,8 @@ section {
       background-color: #005005; }
 
 #frontend {
-  left: 16vh;
-  bottom: 16vh;
+  left: 130px;
+  bottom: 130px;
   background-color: #1a237e; }
   #frontend:hover {
     background-color: #000051; }
@@ -242,8 +242,8 @@ section {
       background-color: #001064; }
 
 #language {
-  left: 16vh;
-  top: 16vh;
+  left: 130px;
+  top: 130px;
   background-color: #0d47a1; }
   #language:hover {
     background-color: #002171; }
@@ -256,8 +256,8 @@ section {
       background-color: #003c8f; }
 
 #others {
-  right: 16vh;
-  top: 16vh;
+  right: 130px;
+  top: 130px;
   background-color: #006064; }
   #others:hover {
     background-color: #00363a; }

@@ -18,9 +18,10 @@ $(window).on('load', function() {
 	$('.projects-grid li').find('p').slideUp();
 
 
-	addDelaysToProjects($('.projects-grid'));
-	addDelaysToSkills($('#skills ul'));
-	addDelaysToSkillsCategories($('#skills'));},500);
+	// addDelaysToProjects($('.projects-grid'));
+	// addDelaysToSkills($('#skills ul'));
+	// addDelaysToSkillsCategories($('#skills'));
+},500);
 
 
 });
