@@ -136,20 +136,20 @@ function scrollAnimationHandler() {
 		let position = $('main').scrollTop();
 
 		// 2 page
-		if (position >= $('.welcome').height()) {
+		if (position >= $('.welcome').height()*0.9) {
 			// $('.about').children('aside').removeClass('hidden');
 			$('.about').children('div').addClass('fade-in').removeClass('hidden');
 
 		}	
 
 		// 3 page
-		if (position >= $('.welcome').height()+$('.about').height()){
+		if (position >= $('.welcome').height()+$('.about').height()*0.9) {
 			$('.projects-grid').children('li').css("transform","translateY(0px)").css("opacity","100");
 			$('.projects h3').css("transform","translateY(0px)").css("opacity","100");
 		}	
 
 		// 4 page
-		if (position >= $('.welcome').height()+$('.about').height()+$('.projects').height()) {
+		if (position >= $('.welcome').height()+$('.about').height()+$('.projects').height()*0.9) {
 			$('#skills ul').children('li').css("transform","scale(1)").css("opacity","100");
 			$('#skills').children('li').css("transform","scale(1)").css("opacity","100");
 			$('main').off('scroll');
