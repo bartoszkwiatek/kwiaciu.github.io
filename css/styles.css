@@ -284,7 +284,8 @@ main {
 
 @media (min-width: 576px) {
   #content {
-    margin-left: 10%; }
+    margin-left: 10%;
+    width: auto; }
     #content .contact-icon {
       margin-bottom: 0rem; }
   .welcome h1,
@@ -295,8 +296,6 @@ main {
     margin-top: -10%; } }
 
 @media (min-width: 768px) {
-  #content {
-    width: 50%; }
   .skills .skill-container {
     width: 90%;
     height: 800px; }
@@ -304,15 +303,9 @@ main {
     width: 44%; } }
 
 @media (min-width: 992px) {
-  main {
-    scroll-snap-type: y mandatory; }
-  section {
-    scroll-snap-stop: always;
-    scroll-snap-align: start; }
   #contact {
     right: 2rem; }
   #content {
-    width: 45%;
     margin-left: 15%; }
     #content li {
       font-size: 1.4rem; }
@@ -324,16 +317,23 @@ main {
   .welcome h1 {
     font-size: 3rem;
     margin-top: -10%; }
+  .about aside {
+    width: 20%; }
+  .about div {
+    padding: 2rem; }
+  .projects .projects-grid li {
+    width: 45%; } }
+
+@media (min-width: 1200px) and (min-height: 750px) {
+  main {
+    scroll-snap-type: y mandatory; }
+  section {
+    scroll-snap-stop: always;
+    scroll-snap-align: start; }
   .about {
     height: 100vh; }
-    .about aside {
-      width: 20%; }
-    .about div {
-      padding: 2rem; }
   .projects {
     height: 100vh; }
-    .projects .projects-grid li {
-      width: 45%; }
   .skills {
     height: 100vh; }
     .skills .skill-container {
@@ -346,8 +346,7 @@ main {
     #contact h4 {
       font-size: 1.5rem; }
   #content {
-    margin-left: 20%;
-    width: 40%; }
+    margin-left: 20%; }
   .projects .projects-grid {
     padding: 2rem; }
     .projects .projects-grid article {
